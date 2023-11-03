@@ -1,6 +1,5 @@
 # Aplicação dockerizada
 - Docker-compose.yml;
-- Diretório da aplicação (/app)
 
 # Aplicação dockerizada
 - ## Configurações e comando para executar em modo desenvolvimento:

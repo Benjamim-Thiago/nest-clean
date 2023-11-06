@@ -2,6 +2,7 @@ import {
   Body,
   ConflictException,
   Controller,
+  Get,
   HttpCode,
   Post,
   UsePipes,
@@ -27,6 +28,7 @@ export class CreateAccountController {
   @HttpCode(201)
   @UsePipes(new ZodValidationPipe(createAccountBodySchema))
   async handle(@Body() body: CreateAccountBodySchema) {
+    console.log('ok')
     const { name, email, password } = body
 
     const userWithSameEmail = await this.prisma.user.findUnique({
@@ -50,5 +52,10 @@ export class CreateAccountController {
         password: hashedPassword,
       },
     })
+  }
+
+  @Get()
+  async find() {
+    return 'ok'
   }
 }

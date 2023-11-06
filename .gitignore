@@ -38,3 +38,9 @@ node_modules
 build
 .env
 coverage
+data
+
+private-key-base64.txt
+private-key.pem
+public-key-base64.txt
+public-key.pem

@@ -2,7 +2,6 @@ import {
   Body,
   ConflictException,
   Controller,
-  Get,
   HttpCode,
   Post,
   UsePipes,
@@ -22,7 +21,7 @@ type CreateAccountBodySchema = z.infer<typeof createAccountBodySchema>
 
 @Controller('/accounts')
 export class CreateAccountController {
-  constructor(private prisma: PrismaService) {}
+  constructor(private readonly prisma: PrismaService) {}
 
   @Post()
   @HttpCode(201)
@@ -54,8 +53,9 @@ export class CreateAccountController {
     })
   }
 
-  @Get()
-  async find() {
-    return 'ok'
+  @Post('/test')
+  @HttpCode(201)
+  async test() {
+    return this.prisma.test()
   }
 }

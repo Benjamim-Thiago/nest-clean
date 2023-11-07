@@ -12,6 +12,10 @@ export class PrismaService
     })
   }
 
+  test() {
+    return 'oi'
+  }
+
   onModuleInit() {
     return this.$connect()
   }

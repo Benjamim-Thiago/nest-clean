@@ -7,7 +7,7 @@ Content-Type: application/json
 
 {
   "name": "Benjamim Thiago",
-  "email": "benjamim@test.com.br",
+  "email": "benjamim@rocketseat.com.br",
   "password": "1234567"
 }
 
@@ -18,7 +18,7 @@ POST {{baseUrl}}/sessions
 Content-Type: application/json
 
 {
-  "email": "benjamim@test.com.br",
+  "email": "benjamim@rocketseat.com.br",
   "password": "1234567"
 }
 
@@ -26,5 +26,17 @@ Content-Type: application/json
 
 # @name create_question
 POST {{baseUrl}}/questions
+Content-Type: application/json
+Authorization: Bearer {{authToken}}
+
+{
+  "title": "Nova pergunta 4",
+  "content": "Teste 4"
+}
+
+###
+
+# @name fetch_recent_questions
+GET {{baseUrl}}/questions?page=4
 Content-Type: application/json
 Authorization: Bearer {{authToken}}

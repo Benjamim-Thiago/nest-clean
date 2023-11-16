@@ -30,8 +30,8 @@ Content-Type: application/json
 Authorization: Bearer {{authToken}}
 
 {
-  "title": "Nova pergunta 5",
-  "content": "Teste 5"
+  "title": "Nova pergunta 10",
+  "content": "Teste 10"
 }
 
 ###
@@ -40,3 +40,15 @@ Authorization: Bearer {{authToken}}
 GET {{baseUrl}}/questions?page=1
 Content-Type: application/json
 Authorization: Bearer {{authToken}}
+
+###
+
+# @name edit_question
+PUT {{baseUrl}}/questions/2933d75a-9dbd-4857-ba91-d66911a406c5
+Content-Type: application/json
+Authorization: Bearer {{authToken}}
+
+{
+  "title": "Nova pergunta 7",
+  "content": "Teste 7"
+}

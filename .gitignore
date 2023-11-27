@@ -39,3 +39,6 @@ build
 .env
 coverage
 data
+dist
+
+.env.test

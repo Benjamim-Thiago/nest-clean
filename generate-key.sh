@@ -12,6 +12,8 @@ JWT_PUBLIC_KEY=$(openssl base64 -in public.key -A)
 
 # Adicionar as chaves ao arquivo .env
 echo " " >> .env
+echo " " >> .env
+echo "# Auth (JWT)" >> .env
 echo "JWT_PRIVATE_KEY=\"$JWT_PRIVATE_KEY\"" >> .env
 echo "JWT_PUBLIC_KEY=\"$JWT_PUBLIC_KEY\"" >> .env
 

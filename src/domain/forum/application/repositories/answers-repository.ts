@@ -9,6 +9,6 @@ export abstract class AnswersRepository {
   ): Promise<Answer[]>
 
   abstract create(answer: Answer): Promise<void>
-  abstract update(answer: Answer): Promise<void>
+  abstract save(answer: Answer): Promise<void>
   abstract delete(answer: Answer): Promise<void>
 }

@@ -7,7 +7,7 @@ import {
 } from '@nestjs/common'
 import { ZodValidationPipe } from '@/infra/http/pipes/zod-validation-pipe'
 import { z } from 'zod'
-import { FetchQuestionCommentsUseCase } from '@/domain/forum/application/use-cases/fetch-question-comments'
+import { FetchAnswerCommentsUseCase } from '@/domain/forum/application/use-cases/fetch-answer-comments'
 import { CommentWithAuthorPresenter } from '../presenters/comment-with-author-presenter'
 
 const pageQueryParamSchema = z
@@ -21,18 +21,18 @@ const queryValidationPipe = new ZodValidationPipe(pageQueryParamSchema)
 
 type PageQueryParamSchema = z.infer<typeof pageQueryParamSchema>
 
-@Controller('/questions/:questionId/comments')
-export class FetchQuestionCommentsController {
-  constructor(private fetchQuestionComments: FetchQuestionCommentsUseCase) {}
+@Controller('/answers/:answerId/comments')
+export class FetchAnswerCommentsController {
+  constructor(private fetchAnswerComments: FetchAnswerCommentsUseCase) {}
 
   @Get()
   async handle(
     @Query('page', queryValidationPipe) page: PageQueryParamSchema,
-    @Param('questionId') questionId: string,
+    @Param('answerId') answerId: string,
   ) {
-    const result = await this.fetchQuestionComments.execute({
+    const result = await this.fetchAnswerComments.execute({
       page,
-      questionId,
+      answerId,
     })
 
     if (result.isLeft()) {

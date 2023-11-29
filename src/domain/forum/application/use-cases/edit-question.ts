@@ -68,7 +68,7 @@ export class EditQuestionUseCase {
     question.title = title
     question.content = content
 
-    await this.questionsRepository.update(question)
+    await this.questionsRepository.save(question)
 
     return right({
       question,
